@@ -4,182 +4,31 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>CRATIVE SHOP — Live Landing</title>
-
-  <!-- ✅ Facebook Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '2317190935387746'); 
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2317190935387746&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- ✅ End Facebook Pixel Code -->
-
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg1:#0f172a; --bg2:#1e293b; --cyan:#06b6d4; --violet:#7c3aed; --accent:#e60023;
-      --text:#e8ecff; --muted:#94a3b8; --success:#22c55e; --danger:#f87171;
+      --accent:#e60023;
     }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:"Hind Siliguri",sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text)}
-    header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:rgba(10,14,30,.85);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;border-bottom:3px solid var(--cyan);box-shadow:0 4px 12px rgba(0,0,0,.6)}
-    .brand{display:flex;align-items:center;gap:10px;padding:8px 12px;border:2px solid var(--violet);border-radius:12px;background:rgba(255,255,255,.05)}
-    .logo{width:40px;height:40px;background:linear-gradient(45deg,var(--violet),var(--cyan));border-radius:8px;animation:spin 8s linear infinite}
-    .title{font-size:1.4rem;font-weight:800;background:linear-gradient(90deg,var(--violet),var(--cyan),#22c55e,var(--violet));-webkit-background-clip:text;color:transparent;animation:gradientShift 6s infinite alternate}
-    nav{display:none}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @keyframes gradientShift{0%{background-position:0%}100%{background-position:100%}}
-    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
-    section{animation:fadeInUp .9s ease both}
-    .hero{text-align:center;padding:56px 16px}
-    .headline-bn{font-size:2.1rem;font-weight:800;margin:10px auto 10px}
-    .sub{color:var(--muted);max-width:760px;margin:0 auto}
-    /* Demo Button */
-    .badge{
-      background:#fff;
-      color:#e60023;
-      font-weight:800;
-      padding:8px 14px;
-      border:2px solid #e60023;
-      border-radius:6px;
-      text-decoration:none;
-      transition:.3s;
-    }
-    .badge:hover{background:#e60023;color:#fff}
+    body{margin:0;font-family:"Hind Siliguri",sans-serif;background:#0f172a;color:#fff}
+    header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:#1e293b;border-bottom:3px solid #06b6d4}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:40px;height:40px;background:linear-gradient(45deg,#7c3aed,#06b6d4);border-radius:8px}
+    .title{font-size:1.4rem;font-weight:800}
+    .demo-btn{background:#fff;color:var(--accent);padding:10px 16px;font-weight:800;text-decoration:none;border:2px solid var(--accent);border-radius:6px}
+    .demo-btn:hover{background:var(--accent);color:#fff}
   </style>
 </head>
 <body>
- <header>
-  <div class="brand">
-    <div class="logo" aria-hidden="true"></div>
-    <div class="title">CRATIVE SHOP</div>
-  </div>
-  <a href="Demo.html" class="badge">DEMO</a>
-</header>
-
-<section class="hero">
-  <h2 class="headline-bn">ধামাকা 90% ডিসকাউন্টে ফাইল কিনুন</h2>
-  <p class="sub">এখন আপনি সরাসরি অর্ডার করতে পারবেন — পেমেন্ট ও সাবমিশন সম্পূর্ণ লাইভ।</p>
-</section>
-
-<!-- বাকি কন্টেন্ট একই থাকবে -->
-</body>
-</html>
-
-
-  <section class="products">
-    <div class="product">
-      <h3>ওয়ার্ড ফাইল</h3>
-      <div class="off-badge">90% OFF</div>
-      <div class="price">৯৯ টাকা <span class="discount">৯৯০ টাকা</span></div>
-      <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1400&auto=format&fit=crop" alt="Word File Preview">
-      <button onclick="selectProduct('ওয়ার্ড ফাইল — ৳৯৯')">অর্ডার করুন</button>
+  <header>
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="title">CRATIVE SHOP</div>
     </div>
-    <div class="product">
-      <h3>গ্রাফিকস ফাইল</h3>
-      <div class="off-badge">90% OFF</div>
-      <div class="price">১৪৯ টাকা <span class="discount">১৪৯০ টাকা</span></div>
-      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Graphics File Preview">
-      <button onclick="selectProduct('গ্রাফিকস ফাইল — ৳১৪৯')">অর্ডার করুন</button>
-    </div>
-    <div class="product">
-      <h3>ভিসা প্রোসেসিং কোর্স</h3>
-      <div class="off-badge">90% OFF</div>
-      <div class="price">২২০ টাকা <span class="discount">২২০০ টাকা</span></div>
-      <img src="https://images.unsplash.com/photo-1542623024-a797a755b8f6?q=80&w=1400&auto=format&fit=crop" alt="Visa Course Preview">
-      <button onclick="selectProduct('ভিসা প্রোসেসিং কোর্স — ৳২২০')">অর্ডার করুন</button>
-    </div>
-  </section>
-
-  <section class="why">
-    <h2>কেন কিনবেন?</h2>
-    <p>আমাদের ফাইল ও কোর্সগুলো প্রফেশনালি তৈরী করা, ব্যবহার উপযোগী এবং সর্বোচ্চ মানসম্পন্ন। 90% ডিসকাউন্টের এই অফার সীমিত সময়ের জন্য।</p>
-  </section>
-
-  <section class="payment">
-    <h2>পেমেন্ট অপশন</h2>
-    <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড — সবগুলোই সক্রিয়।</p>
-    <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment" target="_blank" rel="noopener">
-      <img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash Logo"> বিকাশে পেমেন্ট করুন
-    </a>
-    <div class="pay-note">পেমেন্ট সম্পন্ন করে নিচের অর্ডার ফর্ম সাবমিট করুন।</div>
-  </section>
-
-  <section class="form" id="order">
-    <h2>অর্ডার ফর্ম</h2>
-    <form id="orderForm" action="https://formspree.io/f/xpwjvpaq" method="POST">
-      <input type="text" name="name" placeholder="নাম" required>
-      <input type="email" name="email" placeholder="ইমেইল" required>
-      <input type="text" name="phone" placeholder="ফোন" required>
-      <select name="product" id="productSelect" required>
-        <option value="">প্রোডাক্ট নির্বাচন করুন</option>
-        <option>ওয়ার্ড ফাইল — ৳৯৯</option>
-        <option>গ্রাফিকস ফাইল — ৳১৪৯</option>
-        <option>ভিসা প্রোসেসিং কোর্স — ৳২২০</option>
-      </select>
-      <select name="payment" required>
-        <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
-        <option>bKash</option>
-        <option>Nagad</option>
-        <option>Rocket</option>
-        <option>Visa/MasterCard</option>
-        <option>Bank Transfer</option>
-      </select>
-      <input type="text" name="Transection" placeholder="Transection আইডি লিখুন" required>
-      <textarea name="message" placeholder="অর্ডারের বিস্তারিত"></textarea>
-      <button type="submit" class="submit-btn">অর্ডার করুন</button>
-    </form>
-  </section>
-
-  <section class="gallery" id="demo">
-    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476f?q=80&w=1200&auto=format&fit=crop" alt="Demo 1">
-    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Demo 2">
-    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Demo 3">
-  </section>
-
-  <section class="about">
-    <h2>আমাদের সম্পর্কে</h2>
-    <p>CRATIVE SHOP সবসময় চেষ্টা করে গ্রাহকদের জন্য মানসম্পন্ন ফাইল, গ্রাফিকস এবং কোর্স সরবরাহ করতে।</p>
-  </section>
-
-  <footer>
-    © <span id="y"></span> CRATIVE SHOP — All rights reserved.<br>
-    যোগাযোগ: 01572631745
-  </footer>
-
-  <a href="https://wa.me/qr/VMN734AKZJC7N" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-  </a>
-
-  <div class="toast" role="status" aria-live="polite" id="toast"></div>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    let toastTimer;
-    function showToast(msg){
-      const t = document.getElementById('toast');
-      t.textContent = msg;
-      t.classList.add('show');
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(()=> t.classList.remove('show'), 2200);
-    }
-    function selectProduct(label){
-      const sel = document.getElementById('productSelect');
-      if(!sel) return;
-      for(const opt of sel.options){ if(opt.text === label){ sel.value = opt.text; break; } }
-      document.getElementById('order').scrollIntoView({behavior:'smooth'});
-      showToast('নির্বাচিত: '+ label);
-    }
-  </script>
+    <a href="Demo.html" class="demo-btn">DEMO</a>
+  </header>
+  <main style="padding:40px;text-align:center">
+    <h1>Welcome to Creative Shop Landing Page</h1>
+    <p>এখান থেকে ডেমো দেখতে উপরে DEMO বাটনে ক্লিক করুন।</p>
+  </main>
 </body>
 </html>
