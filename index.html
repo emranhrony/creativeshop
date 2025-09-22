@@ -16,7 +16,6 @@
     .brand{display:flex;align-items:center;gap:10px;padding:8px 12px;border:2px solid var(--violet);border-radius:12px;background:rgba(255,255,255,.05)}
     .logo{width:40px;height:40px;background:linear-gradient(45deg,var(--violet),var(--cyan));border-radius:8px;animation:spin 8s linear infinite}
     .title{font-size:1.4rem;font-weight:800;background:linear-gradient(90deg,var(--violet),var(--cyan),#22c55e,var(--violet));-webkit-background-clip:text;color:transparent;animation:gradientShift 6s infinite alternate}
-    nav{display:none}
 
     /* DEMO Button */
     .badge {
@@ -40,7 +39,65 @@
     @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
     section{animation:fadeInUp .9s ease both}
 
-    /* বাকি সব CSS অপরিবর্তিত থাকবে */
+    .hero{text-align:center;padding:56px 16px}
+    .headline-bn{font-size:2.1rem;font-weight:800;margin:10px auto 10px}
+    .sub{color:var(--muted);max-width:760px;margin:0 auto}
+
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:960px;margin:0 auto 36px;padding:0 16px}
+    .product{background:rgba(255,255,255,.05);border-radius:16px;padding:20px;position:relative;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    .product h3{margin:0;font-size:1.25rem}
+    .price{font-size:1.25rem;color:var(--danger);font-weight:800}
+    .discount{text-decoration:line-through;color:var(--muted);margin-left:10px}
+    .off-badge{position:absolute;top:12px;right:12px;background:var(--success);color:#fff;padding:6px 10px;border-radius:12px;font-size:.85rem;font-weight:800}
+    .product img{width:100%;border-radius:12px;margin-top:12px;aspect-ratio:16/10;object-fit:cover}
+    .product button{margin-top:12px;padding:12px 18px;border:2px solid #fff;border-radius:12px;font-weight:800;cursor:pointer;background:#fff;color:var(--accent)}
+    .product button:hover{background:var(--accent);color:#fff}
+
+    .why,.payment,.about{max-width:960px;margin:0 auto 36px;padding:20px;background:rgba(255,255,255,.05);border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    .why{border:2px solid var(--cyan)}
+
+    .bkash-btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:12px 18px;font-weight:900;border-radius:12px;text-decoration:none;color:#e60073;background:#fff;border:3px solid #e60073;box-shadow:0 6px 20px rgba(230,0,115,.35)}
+    .bkash-btn img{width:26px;height:26px}
+    .pay-note{color:#b7c1ff;margin-top:8px;font-size:.95rem}
+
+    .form{max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);padding:20px;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    input,textarea,select{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none;font-family:"Hind Siliguri",sans-serif}
+    button.submit-btn{padding:12px 18px;border-radius:12px;border:2px solid #fff;font-weight:800;cursor:pointer;background:#fff;color:var(--accent)}
+    button.submit-btn:hover{background:var(--accent);color:#fff}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:960px;margin:0 auto 40px;padding:0 16px}
+    .gallery img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:3/2}
+
+    footer{text-align:center;padding:20px;font-size:.9rem;color:var(--muted);border-top:2px solid var(--cyan)}
+
+    .whatsapp-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:200}
+    .whatsapp-btn img{width:32px;height:32px}
+
+    /* Toast */
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:-120px;min-width:260px;max-width:90vw;background:#111827;border:2px solid #34d399;color:#d1fae5;padding:12px 16px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.5);transition:all .4s ease;z-index:300}
+    .toast.show{bottom:24px}
+    .toast strong{color:#a7f3d0}
+
+    @media (max-width: 1024px){
+      .products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 640px){
+      header{padding:12px 14px}
+      .title{font-size:1.12rem}
+      .hero{padding:40px 12px}
+      .headline-bn{font-size:1.6rem}
+      .products,.gallery{grid-template-columns:1fr;padding:0 12px}
+      .product button,.submit-btn,.bkash-btn{width:100%;padding:14px}
+      .product img{aspect-ratio:4/3}
+      .form{padding:16px}
+      .whatsapp-btn{right:14px;bottom:14px;width:56px;height:56px}
+    }
+    @media (max-width: 380px){
+      .headline-bn{font-size:1.45rem}
+      .title{font-size:1rem}
+      .price{font-size:1.1rem}
+      .bkash-btn img{width:22px;height:22px}
+    }
   </style>
 </head>
 <body>
@@ -50,15 +107,6 @@
       <div class="title">CRATIVE SHOP</div>
     </div>
     <a href="Demo.html" class="badge">DEMO</a>
-  </header>
-
-  <!-- আপনার বাকি কনটেন্ট এখানে থাকবে -->
-</body>
-</html>
-
-
-
-    <nav></nav>
   </header>
 
   <section class="hero">
@@ -98,8 +146,7 @@
   <section class="payment">
     <h2>পেমেন্ট অপশন</h2>
     <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড — সবগুলোই সক্রিয়।</p>
-    <div class="pay-arrow" aria-hidden="true"><span class="arrow">⬇️</span> <span>এখানে পেমেন্ট</span></div>
-    <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment?fbclid=IwVERDUAM9xpdleHRuA2FlbQIxMAABHsO9IZ7e1tkmWd6xEcgt_lkntCoY4sGHEUOFsUBFw2MvO-VHRV8SbGSaum6y_aem_6VjZ7QPYo0qUkvAtUTvUDg" target="_blank" rel="noopener">
+    <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment" target="_blank" rel="noopener">
       <img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash Logo"> বিকাশে পেমেন্ট করুন
     </a>
     <div class="pay-note">পেমেন্ট সম্পন্ন করে নিচের অর্ডার ফর্ম সাবমিট করুন।</div>
