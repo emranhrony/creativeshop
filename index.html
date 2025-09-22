@@ -3,64 +3,102 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>CRATIVE SHOP — Landing</title>
+  <title>CRATIVE SHOP — Live Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: "Hind Siliguri", sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b); color: #e8ecff; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: rgba(10,14,30,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #06b6d4; box-shadow: 0 4px 12px rgba(0,0,0,0.6); }
-    .brand { display: flex; align-items: center; gap: 10px; padding: 8px 16px; border: 2px solid #7c3aed; border-radius: 12px; background: rgba(255,255,255,0.05); }
-    .logo { width: 40px; height: 40px; background: linear-gradient(45deg,#7c3aed,#06b6d4); border-radius: 8px; animation: spin 8s linear infinite; }
-    .title { font-size: 1.6rem; font-weight: 800; background: linear-gradient(90deg,#7c3aed,#06b6d4,#22c55e,#7c3aed); -webkit-background-clip: text; color: transparent; animation: gradientShift 6s infinite alternate; }
-    nav a { margin-left: 20px; text-decoration: none; font-weight: 700; padding: 8px 14px; border-radius: 6px; border: 2px solid #fff; background: #fff; color: #e60023; }
-    nav a:hover { background: #e60023; color: #fff; }
+    :root{
+      --bg1:#0f172a; --bg2:#1e293b; --cyan:#06b6d4; --violet:#7c3aed; --accent:#e60023;
+      --text:#e8ecff; --muted:#94a3b8; --success:#22c55e; --danger:#f87171;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:"Hind Siliguri",sans-serif;background:linear-gradient(135deg,var(--bg1),var(--bg2));color:var(--text)}
+    header{display:flex;justify-content:space-between;align-items:center;padding:16px 24px;background:rgba(10,14,30,.85);backdrop-filter:blur(8px);position:sticky;top:0;z-index:100;border-bottom:3px solid var(--cyan);box-shadow:0 4px 12px rgba(0,0,0,.6)}
+    .brand{display:flex;align-items:center;gap:10px;padding:8px 12px;border:2px solid var(--violet);border-radius:12px;background:rgba(255,255,255,.05)}
+    .logo{width:40px;height:40px;background:linear-gradient(45deg,var(--violet),var(--cyan));border-radius:8px;animation:spin 8s linear infinite}
+    .title{font-size:1.4rem;font-weight:800;background:linear-gradient(90deg,var(--violet),var(--cyan),#22c55e,var(--violet));-webkit-background-clip:text;color:transparent;animation:gradientShift 6s infinite alternate}
+    nav{display:none}
 
-    @keyframes spin { to { transform: rotate(360deg);} }
-    @keyframes gradientShift { 0%{background-position:0%}100%{background-position:100%} }
-    @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes gradientShift{0%{background-position:0%}100%{background-position:100%}}
+    @keyframes fadeInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:translateY(0)}}
+    section{animation:fadeInUp .9s ease both}
 
-    section { animation: fadeInUp 0.9s ease both; }
+    .hero{text-align:center;padding:56px 16px}
+    .headline-bn{font-size:2.1rem;font-weight:800;margin:10px auto 10px}
+    .sub{color:var(--muted);max-width:760px;margin:0 auto}
 
-    .hero { text-align: center; padding: 60px 20px; }
-    .headline-bn { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
+    .products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:960px;margin:0 auto 36px;padding:0 16px}
+    .product{background:rgba(255,255,255,.05);border-radius:16px;padding:20px;position:relative;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    .product h3{margin:0;font-size:1.25rem}
+    .price{font-size:1.25rem;color:var(--danger);font-weight:800}
+    .discount{text-decoration:line-through;color:var(--muted);margin-left:10px}
+    .off-badge{position:absolute;top:12px;right:12px;background:var(--success);color:#fff;padding:6px 10px;border-radius:12px;font-size:.85rem;font-weight:800}
+    .product img{width:100%;border-radius:12px;margin-top:12px;aspect-ratio:16/10;object-fit:cover}
+    .product button{margin-top:12px;padding:12px 18px;border:2px solid #fff;border-radius:12px;font-weight:800;cursor:pointer;background:#fff;color:var(--accent)}
+    .product button:hover{background:var(--accent);color:#fff}
 
-    .products { display: grid; gap: 20px; max-width: 900px; margin: 0 auto 40px; }
-    .product { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
-    .product h3 { margin: 0; font-size: 1.4rem; }
-    .price { font-size: 1.4rem; color: #f87171; font-weight: 700; }
-    .discount { text-decoration: line-through; color: #94a3b8; margin-left: 10px; }
-    .off-badge { position: absolute; top: 12px; right: 12px; background: #22c55e; color: white; padding: 6px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
-    .product img { width: 100%; border-radius: 12px; margin-top: 12px; }
-    .product button { margin-top: 12px; padding: 10px 16px; border: 2px solid #fff; border-radius: 8px; font-weight: 700; cursor: pointer; background: #fff; color: #e60023; }
-    .product button:hover { background: #e60023; color: #fff; }
+    .why,.payment,.about{max-width:960px;margin:0 auto 36px;padding:20px;background:rgba(255,255,255,.05);border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    .why{border:2px solid var(--cyan)}
+    .why h2,.payment h2,.about h2{margin-top:0}
 
-    .why { max-width: 900px; margin: 0 auto; border: 2px solid #06b6d4; border-radius: 16px; padding: 20px; margin-bottom: 40px; background: rgba(255,255,255,0.04); box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
-    .why h2 { margin-top: 0; }
+    .bkash-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:12px 18px;font-weight:900;border-radius:12px;text-decoration:none;color:#e60073;background:#fff;border:3px solid #e60073;box-shadow:0 6px 20px rgba(230,0,115,.35)}
+    .bkash-btn:hover{filter:brightness(.96)}
+    .bkash-btn img{width:26px;height:26px}
+    .pay-note{color:#b7c1ff;margin-top:8px;font-size:.95rem}
 
-    .payment { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
-    .form { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.04); padding: 20px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
-    input, textarea, select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; font-family: "Hind Siliguri", sans-serif; }
-    button.submit-btn { padding: 12px 18px; border-radius: 12px; border: 2px solid #fff; font-weight: 700; cursor: pointer; background: #fff; color: #e60023; }
-    button.submit-btn:hover { background: #e60023; color: #fff; }
+    .form{max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);padding:20px;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
+    input,textarea,select{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none;font-family:"Hind Siliguri",sans-serif}
+    button.submit-btn{padding:12px 18px;border-radius:12px;border:2px solid #fff;font-weight:800;cursor:pointer;background:#fff;color:var(--accent)}
+    button.submit-btn:hover{background:var(--accent);color:#fff}
 
-    .bkash-btn { display:inline-flex; align-items:center; gap:8px; margin-top:16px; padding:14px 22px; font-weight:800; border-radius:12px; text-decoration:none; color:#e60073; background:#fff; border:3px solid #e60073; box-shadow:0 6px 20px rgba(230,0,115,.35); }
-    .bkash-btn:hover{ background:#e60073; color:#fff; }
-    .bkash-btn img { width:28px; height:28px; }
-    .pay-note{ color:#b7c1ff; margin-top:8px; font-size:.95rem; }
+    .gallery{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;max-width:960px;margin:0 auto 40px;padding:0 16px}
+    .gallery img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:3/2}
 
-    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; max-width: 900px; margin: 0 auto 40px; }
-    .gallery img { width: 100%; border-radius: 12px; object-fit: cover; }
+    footer{text-align:center;padding:20px;font-size:.9rem;color:var(--muted);border-top:2px solid var(--cyan)}
 
-    .about { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+    .whatsapp-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:200}
+    .whatsapp-btn img{width:32px;height:32px}
 
-    footer { text-align: center; padding: 20px; font-size: .9rem; color: #94a3b8; border-top: 2px solid #06b6d4; }
+    /* Toast (for minor feedback like select) */
+    .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:-120px;min-width:260px;max-width:90vw;background:#111827;border:2px solid #34d399;color:#d1fae5;padding:12px 16px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.5);transition:all .4s ease;z-index:300}
+    .toast.show{bottom:24px}
+    .toast strong{color:#a7f3d0}
 
-    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 200; }
-    .whatsapp-btn img { width: 32px; height: 32px; }
+    /* ======= Mobile Responsive Tweaks ======= */
+    @media (max-width: 1024px){
+      .products,.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    }
+    @media (max-width: 640px){
+      header{padding:12px 14px}
+      .title{font-size:1.12rem}
+      .hero{padding:40px 12px}
+      .headline-bn{font-size:1.6rem}
+      .products,.gallery{grid-template-columns:1fr;padding:0 12px}
+      .product button,.submit-btn,.bkash-btn{width:100%;padding:14px}
+      .product img{aspect-ratio:4/3}
+      .form{padding:16px}
+      .whatsapp-btn{right:14px;bottom:14px;width:56px;height:56px}
+    }
+    @media (max-width: 380px){
+      .headline-bn{font-size:1.45rem}
+      .title{font-size:1rem}
+      .price{font-size:1.1rem}
+      .bkash-btn img{width:22px;height:22px}
+    }
   </style>
 </head>
-<div class="badge-offer">🔥ডেমো দেখতে এখানে ক্লিক করুন </div>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo" aria-hidden="true"></div>
+      <div class="title">CRATIVE SHOP</div>
+    </div>
+    <nav></nav>
+  </header>
+
   <section class="hero">
     <h2 class="headline-bn">ধামাকা 90% ডিসকাউন্টে ফাইল কিনুন</h2>
+    <p class="sub">এখন আপনি সরাসরি অর্ডার করতে পারবেন — পেমেন্ট ও সাবমিশন সম্পূর্ণ লাইভ।</p>
   </section>
 
   <section class="products">
@@ -68,21 +106,21 @@
       <h3>ওয়ার্ড ফাইল</h3>
       <div class="off-badge">90% OFF</div>
       <div class="price">৯৯ টাকা <span class="discount">৯৯০ টাকা</span></div>
-      <img src="https://via.placeholder.com/400x250.png?text=Word+File" alt="Word File">
+      <img src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1400&auto=format&fit=crop" alt="Word File Preview">
       <button onclick="selectProduct('ওয়ার্ড ফাইল — ৳৯৯')">অর্ডার করুন</button>
     </div>
     <div class="product">
       <h3>গ্রাফিকস ফাইল</h3>
       <div class="off-badge">90% OFF</div>
       <div class="price">১৪৯ টাকা <span class="discount">১৪৯০ টাকা</span></div>
-      <img src="https://via.placeholder.com/400x250.png?text=Graphics+File" alt="Graphics File">
+      <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1400&auto=format&fit=crop" alt="Graphics File Preview">
       <button onclick="selectProduct('গ্রাফিকস ফাইল — ৳১৪৯')">অর্ডার করুন</button>
     </div>
     <div class="product">
       <h3>ভিসা প্রোসেসিং কোর্স</h3>
       <div class="off-badge">90% OFF</div>
       <div class="price">২২০ টাকা <span class="discount">২২০০ টাকা</span></div>
-      <img src="https://via.placeholder.com/400x250.png?text=Visa+Course" alt="Visa Course">
+      <img src="https://images.unsplash.com/photo-1542623024-a797a755b8f6?q=80&w=1400&auto=format&fit=crop" alt="Visa Course Preview">
       <button onclick="selectProduct('ভিসা প্রোসেসিং কোর্স — ৳২২০')">অর্ডার করুন</button>
     </div>
   </section>
@@ -94,14 +132,14 @@
 
   <section class="payment">
     <h2>পেমেন্ট অপশন</h2>
-    <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড এর মাধ্যমে পেমেন্ট করতে পারবেন।</p>
+    <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড — সবগুলোই সক্রিয়।</p>
     <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment?fbclid=IwVERDUAM9xpdleHRuA2FlbQIxMAABHsO9IZ7e1tkmWd6xEcgt_lkntCoY4sGHEUOFsUBFw2MvO-VHRV8SbGSaum6y_aem_6VjZ7QPYo0qUkvAtUTvUDg" target="_blank" rel="noopener">
-      <img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash Logo"> বিকাশে পেমেন্ট করুন
+      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4d/BKash_logo.svg" alt="bKash Logo"> বিকাশে পেমেন্ট করুন
     </a>
-    <div class="pay-note">পেমেন্ট সম্পন্ন করে অর্ডার ফর্মে আপনার তথ্য সাবমিট করুন।</div>
+    <div class="pay-note">পেমেন্ট সম্পন্ন করে নিচের অর্ডার ফর্ম সাবমিট করুন।</div>
   </section>
 
-  <section class="form" id="contact">
+  <section class="form" id="order">
     <h2>অর্ডার ফর্ম</h2>
     <form id="orderForm" action="https://formspree.io/f/xpwjvpaq" method="POST">
       <input type="text" name="name" placeholder="নাম" required>
@@ -113,31 +151,29 @@
         <option>গ্রাফিকস ফাইল — ৳১৪৯</option>
         <option>ভিসা প্রোসেসিং কোর্স — ৳২২০</option>
       </select>
-        <select name="payment" required>
-<option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
-<option>bKash</option>
-<option>Nagad</option>
-<option>Rocket</option>
-<option>Visa/MasterCard</option>
-<option>Bank Transfer</option>
-</select>
-      <section>
-         <input type="text" name="Transection" placeholder="Transection আইডি লিখুন" required>
+      <select name="payment" required>
+        <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
+        <option>bKash</option>
+        <option>Nagad</option>
+        <option>Rocket</option>
+        <option>Visa/MasterCard</option>
+        <option>Bank Transfer</option>
       </select>
+      <input type="text" name="Transection" placeholder="Transection আইডি লিখুন" required>
       <textarea name="message" placeholder="অর্ডারের বিস্তারিত"></textarea>
       <button type="submit" class="submit-btn">অর্ডার করুন</button>
     </form>
   </section>
 
   <section class="gallery" id="demo">
-    <img src="https://via.placeholder.com/300x200.png?text=Demo+1" alt="Demo 1">
-    <img src="https://via.placeholder.com/300x200.png?text=Demo+2" alt="Demo 2">
-    <img src="https://via.placeholder.com/300x200.png?text=Demo+3" alt="Demo 3">
+    <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476f?q=80&w=1200&auto=format&fit=crop" alt="Demo 1">
+    <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop" alt="Demo 2">
+    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=1200&auto=format&fit=crop" alt="Demo 3">
   </section>
 
   <section class="about">
-    <h2>আমাদের ব্যবসা সম্পর্কে</h2>
-    <p>CRATIVE SHOP সবসময় চেষ্টা করে গ্রাহকদের জন্য মানসম্পন্ন ফাইল, গ্রাফিকস এবং কোর্স সরবরাহ করতে। আমরা বিশ্বাস করি আমাদের পণ্য আপনার সময় বাঁচাবে এবং কাজকে সহজ করবে।</p>
+    <h2>আমাদের সম্পর্কে</h2>
+    <p>CRATIVE SHOP সবসময় চেষ্টা করে গ্রাহকদের জন্য মানসম্পন্ন ফাইল, গ্রাফিকস এবং কোর্স সরবরাহ করতে।</p>
   </section>
 
   <footer>
@@ -149,14 +185,24 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
   </a>
 
+  <div class="toast" role="status" aria-live="polite" id="toast"></div>
+
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+    let toastTimer;
+    function showToast(msg){
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(()=> t.classList.remove('show'), 2200);
+    }
     function selectProduct(label){
       const sel = document.getElementById('productSelect');
-      if(sel){
-        for(const opt of sel.options){ if(opt.text === label){ sel.value = opt.text; break; } }
-        document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});
-      }
+      if(!sel) return;
+      for(const opt of sel.options){ if(opt.text === label){ sel.value = opt.text; break; } }
+      document.getElementById('order').scrollIntoView({behavior:'smooth'});
+      showToast('নির্বাচিত: '+ label);
     }
   </script>
 </body>
