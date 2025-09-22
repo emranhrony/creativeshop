@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRATIVE SHOP — Demo Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body{margin:0;font-family:"Hind Siliguri",sans-serif;background:linear-gradient(135deg,#0f172a,#1e293b);color:#e8ecff}
+    header{padding:16px;text-align:center;background:rgba(10,14,30,.9);border-bottom:3px solid #06b6d4;box-shadow:0 4px 12px rgba(0,0,0,.6)}
+    header h1{margin:0;font-size:1.6rem;font-weight:800;background:linear-gradient(90deg,#7c3aed,#06b6d4,#22c55e,#7c3aed);-webkit-background-clip:text;color:transparent}
+    .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;max-width:1080px;margin:30px auto;padding:0 16px}
+    .gallery img{width:100%;border-radius:12px;object-fit:cover;aspect-ratio:4/3;box-shadow:0 4px 10px rgba(0,0,0,.4);transition:transform .3s ease}
+    .gallery img:hover{transform:scale(1.04)}
+    footer{text-align:center;padding:20px;font-size:.9rem;color:#94a3b8;border-top:2px solid #06b6d4}
+    @media(max-width:640px){header h1{font-size:1.3rem}.gallery{gap:14px}}
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ডেমো দেখুন</h1>
+    <p>আমাদের টেমপ্লেটের কাজের কিছু ডেমো নিচে দেওয়া হলো।</p>
+  </header>
+  <section class="gallery">
+    <img src="./assets/demo/demo1.jpg" alt="Demo Preview 1">
+    <img src="./assets/demo/demo2.jpg" alt="Demo Preview 2">
+    <img src="./assets/demo/demo3.jpg" alt="Demo Preview 3">
+    <img src="./assets/demo/demo4.jpg" alt="Demo Preview 4">
+    <img src="./assets/demo/demo5.jpg" alt="Demo Preview 5">
+  </section>
+  <footer>© <span id="y"></span> CRATIVE SHOP — Demo Page</footer>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
