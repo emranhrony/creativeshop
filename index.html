@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CRATIVE SHOP — Landing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: "Hind Siliguri", sans-serif; background: #0b1020; color: #e8ecff; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: rgba(10,14,30,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
+    .brand { display: flex; align-items: center; gap: 10px; }
+    .logo { width: 40px; height: 40px; background: linear-gradient(45deg,#7c3aed,#06b6d4); border-radius: 8px; animation: spin 8s linear infinite; }
+    .title { font-size: 1.6rem; font-weight: 800; background: linear-gradient(90deg,#7c3aed,#06b6d4,#22c55e,#7c3aed); -webkit-background-clip: text; color: transparent; animation: gradientShift 6s infinite alternate; }
+    nav a { margin-left: 20px; text-decoration: none; color: #e8ecff; font-weight: 600; }
+    nav a:hover { color: #06b6d4; }
+
+    @keyframes spin { to { transform: rotate(360deg);} }
+    @keyframes gradientShift { 0%{background-position:0%}100%{background-position:100%} }
+
+    .hero { text-align: center; padding: 60px 20px; }
+    .headline-bn { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
+
+    .products { display: grid; gap: 20px; max-width: 900px; margin: 0 auto 40px; }
+    .product { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; position: relative; }
+    .product h3 { margin: 0; font-size: 1.4rem; }
+    .price { font-size: 1.4rem; color: #f87171; font-weight: 700; }
+    .discount { text-decoration: line-through; color: #94a3b8; margin-left: 10px; }
+    .off-badge { position: absolute; top: 12px; right: 12px; background: #22c55e; color: white; padding: 6px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
+    .product img { width: 100%; border-radius: 12px; margin-top: 12px; }
+    .product button { margin-top: 12px; padding: 10px 16px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; background: linear-gradient(135deg,#7c3aed,#06b6d4); color: white; }
+
+    .why { max-width: 900px; margin: 0 auto; border: 2px solid #06b6d4; border-radius: 16px; padding: 20px; margin-bottom: 40px; }
+    .why h2 { margin-top: 0; }
+
+    .payment { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+    .form { max-width: 600px; margin: 0 auto; }
+    input, textarea, select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; font-family: "Hind Siliguri", sans-serif; }
+    button.submit-btn { padding: 12px 18px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; background: linear-gradient(135deg,#7c3aed,#06b6d4); color: white; }
+
+    .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; max-width: 900px; margin: 0 auto 40px; }
+    .gallery img { width: 100%; border-radius: 12px; object-fit: cover; }
+
+    .about { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+
+    footer { text-align: center; padding: 20px; font-size: .9rem; color: #94a3b8; }
+
+    .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 200; }
+    .whatsapp-btn img { width: 32px; height: 32px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">
+      <div class="logo"></div>
+      <div class="title">CRATIVE SHOP</div>
+    </div>
+    <nav>
+      <a href="#demo">ডেমো</a>
+      <a href="#contact">যোগাযোগ</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2 class="headline-bn">ধামাকা 90% ডিসকাউন্টে ফাইল কিনুন</h2>
+  </section>
+
+  <section class="products">
+    <div class="product">
+      <h3>ওয়ার্ড ফাইল</h3>
+      <div class="off-badge">90% OFF</div>
+      <div class="price">৯৯ টাকা <span class="discount">৯৯০ টাকা</span></div>
+      <img src="https://via.placeholder.com/400x250.png?text=Word+File" alt="Word File">
+      <button onclick="selectProduct('ওয়ার্ড ফাইল — ৳৯৯')">অর্ডার করুন</button>
+    </div>
+    <div class="product">
+      <h3>গ্রাফিকস ফাইল</h3>
+      <div class="off-badge">90% OFF</div>
+      <div class="price">১৪৯ টাকা <span class="discount">১৪৯০ টাকা</span></div>
+      <img src="https://via.placeholder.com/400x250.png?text=Graphics+File" alt="Graphics File">
+      <button onclick="selectProduct('গ্রাফিকস ফাইল — ৳১৪৯')">অর্ডার করুন</button>
+    </div>
+    <div class="product">
+      <h3>ভিসা প্রোসেসিং কোর্স</h3>
+      <div class="off-badge">90% OFF</div>
+      <div class="price">২২০ টাকা <span class="discount">২২০০ টাকা</span></div>
+      <img src="https://via.placeholder.com/400x250.png?text=Visa+Course" alt="Visa Course">
+      <button onclick="selectProduct('ভিসা প্রোসেসিং কোর্স — ৳২২০')">অর্ডার করুন</button>
+    </div>
+  </section>
+
+  <section class="why">
+    <h2>কেন কিনবেন?</h2>
+    <p>আমাদের ফাইল ও কোর্সগুলো প্রফেশনালি তৈরী করা, ব্যবহার উপযোগী এবং সর্বোচ্চ মানসম্পন্ন। 90% ডিসকাউন্টের এই অফার সীমিত সময়ের জন্য।</p>
+  </section>
+
+  <section class="payment">
+    <h2>পেমেন্ট অপশন</h2>
+    <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড এর মাধ্যমে পেমেন্ট করতে পারবেন।</p>
+    <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment?fbclid=IwVERDUAM9xpdleHRuA2FlbQIxMAABHsO9IZ7e1tkmWd6xEcgt_lkntCoY4sGHEUOFsUBFw2MvO-VHRV8SbGSaum6y_aem_6VjZ7QPYo0qUkvAtUTvUDg" target="_blank" rel="noopener">বিকাশে পেমেন্ট করুন</a>
+    <div class="pay-note">পেমেন্ট সম্পন্ন করে অর্ডার ফর্মে আপনার তথ্য সাবমিট করুন।</div>
+  </section>
+
+  <section class="form" id="contact">
+    <h2>অর্ডার ফর্ম</h2>
+    <form id="orderForm" action="https://formspree.io/f/xpwjvpaq" method="POST">
+      <input type="text" name="name" placeholder="নাম" required>
+      <input type="email" name="email" placeholder="ইমেইল" required>
+      <input type="text" name="phone" placeholder="ফোন" required>
+      <select name="product" id="productSelect" required>
+        <option value="">প্রোডাক্ট নির্বাচন করুন</option>
+        <option>ওয়ার্ড ফাইল — ৳৯৯</option>
+        <option>গ্রাফিকস ফাইল — ৳১৪৯</option>
+        <option>ভিসা প্রোসেসিং কোর্স — ৳২২০</option>
+      </select>
+      <select name="payment" required>
+        <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
+        <option>bKash</option>
+        <option>Nagad</option>
+        <option>Rocket</option>
+        <option>Visa/MasterCard</option>
+        <option>Bank Transfer</option>
+      </select>
+      <textarea name="message" placeholder="অর্ডারের বিস্তারিত"></textarea>
+      <button type="submit" class="submit-btn">অর্ডার করুন</button>
+    </form>
+  </section>
+
+  <section class="gallery" id="demo">
+    <img src="https://via.placeholder.com/300x200.png?text=Demo+1" alt="Demo 1">
+    <img src="https://via.placeholder.com/300x200.png?text=Demo+2" alt="Demo 2">
+    <img src="https://via.placeholder.com/300x200.png?text=Demo+3" alt="Demo 3">
+  </section>
+
+  <section class="about">
+    <h2>আমাদের ব্যবসা সম্পর্কে</h2>
+    <p>CRATIVE SHOP সবসময় চেষ্টা করে গ্রাহকদের জন্য মানসম্পন্ন ফাইল, গ্রাফিকস এবং কোর্স সরবরাহ করতে। আমরা বিশ্বাস করি আমাদের পণ্য আপনার সময় বাঁচাবে এবং কাজকে সহজ করবে।</p>
+  </section>
+
+  <footer>
+    © <span id="y"></span> CRATIVE SHOP — All rights reserved.<br>
+    যোগাযোগ: 01572631745
+  </footer>
+
+  <a href="https://wa.me/qr/VMN734AKZJC7N" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+  </a>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    function selectProduct(label){
+      const sel = document.getElementById('productSelect');
+      if(sel){
+        for(const opt of sel.options){ if(opt.text === label){ sel.value = opt.text; break; } }
+        document.getElementById('orderForm').scrollIntoView({behavior:'smooth'});
+      }
+    }
+  </script>
+</body>
+</html>
