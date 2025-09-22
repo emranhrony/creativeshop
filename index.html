@@ -41,10 +41,15 @@
     .why{border:2px solid var(--cyan)}
     .why h2,.payment h2,.about h2{margin-top:0}
 
-    .bkash-btn{display:inline-flex;align-items:center;gap:8px;margin-top:12px;padding:12px 18px;font-weight:900;border-radius:12px;text-decoration:none;color:#e60073;background:#fff;border:3px solid #e60073;box-shadow:0 6px 20px rgba(230,0,115,.35)}
+    .bkash-btn{display:inline-flex;align-items:center;gap:8px;margin-top:10px;padding:12px 18px;font-weight:900;border-radius:12px;text-decoration:none;color:#e60073;background:#fff;border:3px solid #e60073;box-shadow:0 6px 20px rgba(230,0,115,.35)}
     .bkash-btn:hover{filter:brightness(.96)}
     .bkash-btn img{width:26px;height:26px}
     .pay-note{color:#b7c1ff;margin-top:8px;font-size:.95rem}
+
+    /* Payment arrow hint */
+    .pay-arrow{display:inline-flex;align-items:center;gap:8px;margin-top:6px;padding:6px 10px;border-radius:10px;background:rgba(255,255,255,.08);border:1px dashed #ffd166;color:#ffd166;font-weight:800}
+    .pay-arrow .arrow{display:inline-block;animation:nudge 1.2s ease-in-out infinite}
+    @keyframes nudge{0%{transform:translateY(0)}50%{transform:translateY(4px)}100%{transform:translateY(0)}}
 
     .form{max-width:720px;margin:0 auto;background:rgba(255,255,255,.04);padding:20px;border-radius:16px;box-shadow:0 4px 10px rgba(0,0,0,.4)}
     input,textarea,select{width:100%;padding:12px;margin-bottom:12px;border-radius:10px;border:none;font-family:"Hind Siliguri",sans-serif}
@@ -59,7 +64,7 @@
     .whatsapp-btn{position:fixed;bottom:20px;right:20px;width:60px;height:60px;background:#25d366;border-radius:50%;display:flex;justify-content:center;align-items:center;box-shadow:0 4px 10px rgba(0,0,0,.3);z-index:200}
     .whatsapp-btn img{width:32px;height:32px}
 
-    /* Toast (for minor feedback like select) */
+    /* Toast */
     .toast{position:fixed;left:50%;transform:translateX(-50%);bottom:-120px;min-width:260px;max-width:90vw;background:#111827;border:2px solid #34d399;color:#d1fae5;padding:12px 16px;border-radius:12px;box-shadow:0 10px 24px rgba(0,0,0,.5);transition:all .4s ease;z-index:300}
     .toast.show{bottom:24px}
     .toast strong{color:#a7f3d0}
@@ -78,6 +83,7 @@
       .product img{aspect-ratio:4/3}
       .form{padding:16px}
       .whatsapp-btn{right:14px;bottom:14px;width:56px;height:56px}
+      .pay-arrow{width:100%;justify-content:center}
     }
     @media (max-width: 380px){
       .headline-bn{font-size:1.45rem}
@@ -133,22 +139,13 @@
   <section class="payment">
     <h2>পেমেন্ট অপশন</h2>
     <p>বিকাশ, নগদ, রকেট এবং ভিসা/মাস্টারকার্ড — সবগুলোই সক্রিয়।</p>
+    <div class="pay-arrow" aria-hidden="true"><span class="arrow">⬇️</span> <span>এখানে পেমেন্ট</span></div>
     <a class="bkash-btn" href="https://shop.bkash.com/shah-malum-air-service01710461/paymentlink/default-payment?fbclid=IwVERDUAM9xpdleHRuA2FlbQIxMAABHsO9IZ7e1tkmWd6xEcgt_lkntCoY4sGHEUOFsUBFw2MvO-VHRV8SbGSaum6y_aem_6VjZ7QPYo0qUkvAtUTvUDg" target="_blank" rel="noopener">
       <img src="https://download.logo.wine/logo/BKash/BKash-Logo.wine.png" alt="bKash Logo"> বিকাশে পেমেন্ট করুন
-    </section>
-    
-    <!-- Features Section -->
-<section class="why">
-<h2 style="text-align:center;margin-bottom:28px">কেন এই টেমপ্লেট?</h2>
-<div class="features">
-<div class="card"><h3>✅ Ready & Editable</h3><p>প্রতিটি টেমপ্লেট ১০০% কাস্টমাইজেবল।</p></div>
-<div class="card"><h3>⚡ সময় সাশ্রয়</h3><p>ঘন্টার কাজ মিনিটে—ডিজাইন নয়, কনটেন্টে ফোকাস করুন।</p></div>
-</div>
-</section>
-    
-    <section>
+    </a>
     <div class="pay-note">পেমেন্ট সম্পন্ন করে নিচের অর্ডার ফর্ম সাবমিট করুন।</div>
   </section>
+
   <section class="form" id="order">
     <h2>অর্ডার ফর্ম</h2>
     <form id="orderForm" action="https://formspree.io/f/xpwjvpaq" method="POST">
