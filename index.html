@@ -6,36 +6,41 @@
   <title>CRATIVE SHOP — Landing</title>
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    body { margin: 0; font-family: "Hind Siliguri", sans-serif; background: #0b1020; color: #e8ecff; }
-    header { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: rgba(10,14,30,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; }
-    .brand { display: flex; align-items: center; gap: 10px; }
+    body { margin: 0; font-family: "Hind Siliguri", sans-serif; background: linear-gradient(135deg, #0f172a, #1e293b); color: #e8ecff; }
+    header { display: flex; justify-content: space-between; align-items: center; padding: 16px 32px; background: rgba(10,14,30,0.85); backdrop-filter: blur(8px); position: sticky; top: 0; z-index: 100; border-bottom: 3px solid #06b6d4; box-shadow: 0 4px 12px rgba(0,0,0,0.6); }
+    .brand { display: flex; align-items: center; gap: 10px; padding: 8px 16px; border: 2px solid #7c3aed; border-radius: 12px; background: rgba(255,255,255,0.05); }
     .logo { width: 40px; height: 40px; background: linear-gradient(45deg,#7c3aed,#06b6d4); border-radius: 8px; animation: spin 8s linear infinite; }
     .title { font-size: 1.6rem; font-weight: 800; background: linear-gradient(90deg,#7c3aed,#06b6d4,#22c55e,#7c3aed); -webkit-background-clip: text; color: transparent; animation: gradientShift 6s infinite alternate; }
-    nav a { margin-left: 20px; text-decoration: none; color: #e8ecff; font-weight: 600; }
-    nav a:hover { color: #06b6d4; }
+    nav a { margin-left: 20px; text-decoration: none; font-weight: 700; padding: 8px 14px; border-radius: 6px; border: 2px solid #fff; background: #fff; color: #e60023; }
+    nav a:hover { background: #e60023; color: #fff; }
 
     @keyframes spin { to { transform: rotate(360deg);} }
     @keyframes gradientShift { 0%{background-position:0%}100%{background-position:100%} }
+    @keyframes fadeInUp { from {opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);} }
+
+    section { animation: fadeInUp 0.9s ease both; }
 
     .hero { text-align: center; padding: 60px 20px; }
     .headline-bn { font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
 
     .products { display: grid; gap: 20px; max-width: 900px; margin: 0 auto 40px; }
-    .product { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; position: relative; }
+    .product { background: rgba(255,255,255,0.05); border-radius: 16px; padding: 20px; position: relative; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
     .product h3 { margin: 0; font-size: 1.4rem; }
     .price { font-size: 1.4rem; color: #f87171; font-weight: 700; }
     .discount { text-decoration: line-through; color: #94a3b8; margin-left: 10px; }
     .off-badge { position: absolute; top: 12px; right: 12px; background: #22c55e; color: white; padding: 6px 10px; border-radius: 12px; font-size: 0.85rem; font-weight: 700; }
     .product img { width: 100%; border-radius: 12px; margin-top: 12px; }
-    .product button { margin-top: 12px; padding: 10px 16px; border: none; border-radius: 10px; font-weight: 700; cursor: pointer; background: linear-gradient(135deg,#7c3aed,#06b6d4); color: white; }
+    .product button { margin-top: 12px; padding: 10px 16px; border: 2px solid #fff; border-radius: 8px; font-weight: 700; cursor: pointer; background: #fff; color: #e60023; }
+    .product button:hover { background: #e60023; color: #fff; }
 
-    .why { max-width: 900px; margin: 0 auto; border: 2px solid #06b6d4; border-radius: 16px; padding: 20px; margin-bottom: 40px; }
+    .why { max-width: 900px; margin: 0 auto; border: 2px solid #06b6d4; border-radius: 16px; padding: 20px; margin-bottom: 40px; background: rgba(255,255,255,0.04); box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
     .why h2 { margin-top: 0; }
 
-    .payment { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; text-align: center; }
-    .form { max-width: 600px; margin: 0 auto; }
+    .payment { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
+    .form { max-width: 600px; margin: 0 auto; background: rgba(255,255,255,0.04); padding: 20px; border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
     input, textarea, select { width: 100%; padding: 12px; margin-bottom: 12px; border-radius: 8px; border: none; font-family: "Hind Siliguri", sans-serif; }
-    button.submit-btn { padding: 12px 18px; border-radius: 12px; border: none; font-weight: 700; cursor: pointer; background: linear-gradient(135deg,#7c3aed,#06b6d4); color: white; }
+    button.submit-btn { padding: 12px 18px; border-radius: 12px; border: 2px solid #fff; font-weight: 700; cursor: pointer; background: #fff; color: #e60023; }
+    button.submit-btn:hover { background: #e60023; color: #fff; }
 
     .bkash-btn { display:inline-flex; align-items:center; gap:8px; margin-top:16px; padding:14px 22px; font-weight:800; border-radius:12px; text-decoration:none; color:#e60073; background:#fff; border:3px solid #e60073; box-shadow:0 6px 20px rgba(230,0,115,.35); }
     .bkash-btn:hover{ background:#e60073; color:#fff; }
@@ -45,9 +50,9 @@
     .gallery { display: grid; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); gap: 16px; max-width: 900px; margin: 0 auto 40px; }
     .gallery img { width: 100%; border-radius: 12px; object-fit: cover; }
 
-    .about { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; }
+    .about { max-width: 900px; margin: 0 auto 40px; padding: 20px; background: rgba(255,255,255,0.05); border-radius: 16px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); }
 
-    footer { text-align: center; padding: 20px; font-size: .9rem; color: #94a3b8; }
+    footer { text-align: center; padding: 20px; font-size: .9rem; color: #94a3b8; border-top: 2px solid #06b6d4; }
 
     .whatsapp-btn { position: fixed; bottom: 20px; right: 20px; width: 60px; height: 60px; background-color: #25d366; border-radius: 50%; display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 200; }
     .whatsapp-btn img { width: 32px; height: 32px; }
@@ -60,8 +65,8 @@
       <div class="title">CRATIVE SHOP</div>
     </div>
     <nav>
-      <a href="#demo">ডেমো</a>
-      <a href="#contact">যোগাযোগ</a>
+      <a href="#demo">ডেমো দেখতে এখানে ক্লিক করুন</a>
+      <a href="https://wa.me/qr/VMN734AKZJC7N" target="_blank">যোগাযোগ</a>
     </nav>
   </header>
 
@@ -120,12 +125,7 @@
         <option>ভিসা প্রোসেসিং কোর্স — ৳২২০</option>
       </select>
       <select name="payment" required>
-        <option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option>
-        <option>bKash</option>
-        <option>Nagad</option>
-        <option>Rocket</option>
-        <option>Visa/MasterCard</option>
-        <option>Bank Transfer</option>
+         <input type="text" name="name" placeholder="Transection আইডি লিখুন" required>
       </select>
       <textarea name="message" placeholder="অর্ডারের বিস্তারিত"></textarea>
       <button type="submit" class="submit-btn">অর্ডার করুন</button>
